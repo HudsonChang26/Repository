@@ -1,9 +1,9 @@
-# Intro to CompSci C Block
+# Intermediate CompSci C Block
 ## Repo Organization
-# Homework
-# Projects
+### Homework
+### Projects
 ❤️❤
-# Example Files
+### Example Files
 
 
 ## ToDo
