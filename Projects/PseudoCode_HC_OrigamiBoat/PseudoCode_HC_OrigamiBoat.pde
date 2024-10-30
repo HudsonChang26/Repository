@@ -1,5 +1,5 @@
 
-Start
+start
 
 /* 
 This code creates an origami boat!
@@ -127,4 +127,4 @@ func openTheTriangle();
   
 func formBoat();
 }
-End
+end
