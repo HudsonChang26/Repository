@@ -1,58 +1,61 @@
 
 Start
 
-function setup {
-  Grab an 8x11 sheet of paper 
-  If colored boat is desired {
+/* 
+This code creates an origami boat!
+*/
+
+define setup(){
+  if colored boat is desired {
     Grab a colored sheet of paper
     // the back side will form the outer shell 
     // the front side will form the inner sail 
   } 
   else {
-    Grab an 8x11 sheet of paper
+    Grab a normal 8x11 sheet of paper
   } 
 }
 
-function initial orientation {
+define initialOrientation(){
   Start in portrait position with the back side face up
 }
   
     
-function Mountain Fold { 
+define mountainFold(){
   Fold the top edge down to the bottom edge
   Crease
 }
 
 
-function rotate {
+define rotate(){
   Rotate the paper to the right clockwise
 }
 
-function unfold {
+define unfold(){
   Unfold the previous step
 }
 
-function corner fold {
+define cornerFold(){
   Fold the top right corner down
   Continue until it meets the middle reference line
   Crease
 }
 
-function switch sides {
+define switchSides(){
   Move to the other side
   
-function rectangle bottoms up {
+define rectangleBottomsUp(){
   Take the top rectangular layer at the bottom
   Fold it up past the triangles 
   Continue until you can go no further
   Crease
 }
 
-function flip {
+define flip(){
   Flip from right to left to the other side
 }
 
-function open the hat {
+define openTheHat(){
   Find the bottom of the "hat"
   Find the opening
   Open it up 
@@ -60,17 +63,18 @@ function open the hat {
   Flatten and crease to form diamond shape
 }
 
-Function check diamond {
+define checkDiamond(){
   Confirm triangle flaps on the bottom
 }
 
-function triangle bottoms up {
+define triangleBottomsUp(){
   Take the top triangular layer at the bottom  
   Fold it up
   Match it with the upper triangle 
   Crease
-  
-function open the triangle {
+}
+
+define openTheTriangle(){
   Find the bottom the triangle
   Find the opening
   Open it up
@@ -79,39 +83,48 @@ function open the triangle {
   Keep opening on the bottom
 }
 
-function form boat {
+define formBoat(){
   Find loose ends at the top 
   Pull loose ends apart
   Continue until upside down trapezoid is reached
 }
 
-setup
-Initial orientation
-Mountain Fold 
-rotate
-Mountain Fold
-unfold
+{
+func setup();
+func initialOrientation();
+func mountainFold();
+func rotate();
+func mountainFold();
+func unfold();
 // In this case, only applicable to the mountain fold
-rotate 3 times 
+for 3 times {
+  func rotate() 
+}
+;
 
 for 2 times {
-  corner fold 
-  switch sides 
+  func cornerFold();
+  func switchSides();
   // in this case, move to the top left corner
 }
+;
 
 for 2 times { 
-  rectangle bottoms up
-  flip 
-
-open the hat
-check diamond
+  func rectangleBottomsUp();
+  func flip();
+}
+;
+func openTheHat();
+func checkDiamond();
 
 for 2 times {
-  triangle bottoms up 
-  flip
+  func triangleBottomsUp();
+  func flip();
 }
+;
 
-open the triangle
+func openTheTriangle();
   
-form boat
+func formBoat();
+}
+End
