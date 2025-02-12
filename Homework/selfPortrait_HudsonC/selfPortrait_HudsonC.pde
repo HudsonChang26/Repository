@@ -5,6 +5,7 @@
 void setup(){
   size(500, 500);
   background(200, 240, 240, 50);
+  pixelDensity(2);
 }
 
 // draws some guy named Hudson Chang with a cool background! 
