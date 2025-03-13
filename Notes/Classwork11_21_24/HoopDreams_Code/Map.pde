@@ -14,7 +14,7 @@ Environment Idea:
 */ 
 
 void initEnvironment(){
-
+  HomeBase = new Environment();
   
 }
 

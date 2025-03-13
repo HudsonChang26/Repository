@@ -3,23 +3,35 @@
 
 //Declared the Player
 
-//Class/DataType             Name/Handle/Object
-Avatar                         PlayerOne;
+//Class/DataType     |   Name/Handle/Object
+Avatar PlayerOne;
 
+//Declare the HomeBase
+
+Environment HomeBase;
+
+//Declare Island(s)
+Island IslandOne;
+Island IslandTwo;
+Island IslandThree;
 
 
 
 void setup(){
   
-  size(800, 800, P3D);
+  size(800, 600, P3D);
   
   // These are display parameters 
   initDisplay();
   initAvatar();
-  //intMap();
+  initIsland();
+  initEnvironment();
   
   //Initialization of our Character
   PlayerOne = new Avatar();
+  IslandOne = new Island();
+  IslandTwo = new Island();
+  IslandThree = new Island();
   
   
   
@@ -29,8 +41,16 @@ void setup(){
 
 void draw(){
   
+  background(0); //clears screen each frame
   
+  IslandOne.draw();
+  IslandTwo.draw();
+  IslandThree.draw();
+  
+  PlayerOne.update();
   PlayerOne.draw();
+  
+
   
   
   
