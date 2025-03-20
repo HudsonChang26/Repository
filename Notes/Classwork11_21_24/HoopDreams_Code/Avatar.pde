@@ -24,10 +24,10 @@ class Avatar {
   // Default Constructor
   Avatar(){
     
-    y = height/2 + 145;       // initial position on top of Island
-    velocity = 0;            // indicate that there is no initial movement
+    y = height/2 + 145;        // initial position on top of Island
+    velocity = 0;             // indicate that there is no initial movement
     gravity = 0.5;           // Pulls the ball back down 
-    bounceFactor = -0.95;        //How much it bounces back (infinite) 
+    bounceFactor = -0.95;   // How much it bounces back (infinite) 
     
     
   }

@@ -29,7 +29,7 @@ class Island {
   
   void draw(){
     
-    //fill(16, 161, 50);
+
     pushMatrix();
       translate(width/2, height/2+200);
       drawIsland();
