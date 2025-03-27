@@ -44,7 +44,7 @@ void setup(){
 
 void draw(){
   
-  //background(0); //clears screen each frame
+  background(0); //clears screen each frame
   
   HomeBase.clouds();
   IslandOne.draw();
