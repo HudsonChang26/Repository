@@ -31,7 +31,11 @@ class Environment{
   }
 
     void clouds(){
-      image(cloudsBackground, -400, -400);
+      pushMatrix();
+        translate(-30,0);
+        scale(1.1);
+        image(cloudsBackground, 0, 0);
+      popMatrix();
     }
       
 }

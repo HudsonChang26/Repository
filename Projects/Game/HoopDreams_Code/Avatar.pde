@@ -23,15 +23,19 @@ class Avatar {
   float velocityZ;        // movement speed in z direction 
   float gravity;         // gravitational force pulling ball down
   float bounceFactor;    // energy loss on bounce (but infinite for this case) 
-  float islandY = height / 2 + 145;  // Island "ceiling" 
-  
+  float islandY = height / 2 + 75;  // Island "ceiling" 
+  float rotationX;                               // rotation to try later
+  float rotationY;                               //rotation to try later
+  float rotationZ;                               // rotation to try later
+    
   // Constructor
   Avatar(){
     
-    y = height / 2+50;        // initial position on top of Island
+    y = height / 2;        // initial position on top of Island
     velocityY = 0;             // indicate that there is no initial movement
-    gravity = 1.5;           // Pulls the ball back down 
+    gravity = 3;           // Pulls the ball back down 
     bounceFactor = -1;   // How much it bounces back (infinite) 
+
     
     basketballStandard = loadShape("BasketballStandard/tinker.obj"); //define our 3D shape
     
@@ -42,9 +46,8 @@ class Avatar {
     
     pushMatrix();
       //translate(width/2+15, y, z); //using the bouncing y and moving z 
-      translate(width/2+15, y, z);
-      scale(1.5);
-      //rotateX(PI/2);
+      translate(width/2+25, y, z);
+      scale(4);
       shape(basketballStandard, 0, 0);
     popMatrix();
     
@@ -68,41 +71,33 @@ class Avatar {
     velocityY += gravity;     // apply gravity to velocity
     y += velocityY;           // apply velocity to position
     
-    println("y: " + y + ", velocityY: " + velocityY + ", velocityZ: " + velocityZ); //check y position
+    println("y: " + y + ", velocityY: " + velocityY + ", velocityZ: " + velocityZ); //check y and z position
+    
+
+    
     
     // Collision with island check
 
     if (y > islandY) {
       y = islandY;    // reset position to island surface
       velocityY *= bounceFactor; // Reverse velocity
+
+
       //velocityY += 5;
-    
-    
-      // Apply a force to keep ball bouncing 
-      if (velocityY < 0) {
-        velocityY += 5;
-      }
     }
+    
+
+    
     
     if (y < height/2) {
       velocityY *= bounceFactor; //Reverse velocity if too high
+
       
       if (velocityY < 0) {
-        velocityY -=5;
+        velocityY -= 5;
       }
     }
     
-    /////////////
-    
-    /* if (z > width - 100 || z < 100) {
-      velocityZ *= -1;
-    }
-    
-    //update z position
-    z += velocityZ;
-    
-    */
-  ////////////////////
   
   
   }

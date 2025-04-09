@@ -1,4 +1,4 @@
-// This is our Main File
+// This is our Main File! 
 
 
 //Declared the Player
@@ -6,15 +6,20 @@
 //Class/DataType     |   Name/Handle/Object
 Avatar PlayerOne;
 
+//Declare the Assets object globally
+Assets assets;
 
 //Declare Island(s)
 Island IslandOne;
-Island IslandTwo;
-Island IslandThree;
 
 //Declare the HomeBase
 
 Environment HomeBase;
+
+
+//Keep track of what screen we are on
+Screen currentScreen;
+
 
 
 
@@ -22,8 +27,9 @@ Environment HomeBase;
 
 void setup(){
   
-  size(800, 600, P3D);
+  size(800, 1000, P3D);
   
+  assets = new Assets(); //Load all image textures here 
   // These are display parameters 
   initDisplay();
   initAvatar();
@@ -32,10 +38,9 @@ void setup(){
   
   //Initialization of our Character
   // PlayerOne = new Avatar();
-  IslandOne = new Island();
-  IslandTwo = new Island();
-  IslandThree = new Island();
-  
+  //IslandOne = new Island(assets); // transfer textures to Island
+
+  currentScreen = new HomeScreen(); //start on homescreen 
   
   
 }
@@ -45,18 +50,11 @@ void setup(){
 void draw(){
   
   background(0); //clears screen each frame
-  
-  HomeBase.clouds();
-  IslandOne.draw();
-  IslandTwo.draw();
-  IslandThree.draw();
-  
-  PlayerOne.update();
-  PlayerOne.draw();
+  currentScreen.display(); //Draw the currently active screen
 
-  
+}
 
-  
-  
+void mousePressed(){
+  currentScreen.handleClick(mouseX, mouseY); //Handle button presses
   
 }
